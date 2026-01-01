@@ -10,7 +10,7 @@
   home.homeDirectory = "/home/adrian";
   home.stateVersion = "25.11";
 
-  home.packages = with pkgs; [ rofi prismlauncher ];
+  home.packages = with pkgs; [ rofi prismlauncher kdePackages.qtsvg kdePackages.dolphin ];
 
   programs.starship.enable = true; 
 
@@ -41,6 +41,7 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
+      vim = "nvim";
     };
     history.size = 10000;
   };
