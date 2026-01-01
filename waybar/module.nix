@@ -1,4 +1,6 @@
-{
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ jq ];
+
   programs.waybar = {
     enable = true;
     settings.main = {
@@ -6,7 +8,7 @@
 
       modules-left = [ "custom/nixos" "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" ];
-      modules-right = [ "network" "cpu" "memory" "temperature" "clock" ];
+      modules-right = [ "network" "cpu" "memory" "custom/temp" "clock" ];
 
       "custom/nixos" = {
         format = "";
@@ -31,6 +33,13 @@
 
       memory = {
         format = "  {}%";
+      };
+
+      "custom/temp" = {
+        exec = ./temperature.sh;
+        interval = 10;
+	format = " {text}";
+	tooltip = false;
       };
 
       clock = {

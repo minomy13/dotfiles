@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./waybar/waybar.nix
+    ./waybar/module.nix
   ];
 
   home.username = "adrian";
   home.homeDirectory = "/home/adrian";
   home.stateVersion = "25.11";
 
-  home.packages = [ pkgs.rofi pkgs.prismlauncher ];
+  home.packages = with pkgs; [ rofi prismlauncher ];
 
   programs.neovim = {
     enable = true;
