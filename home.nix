@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
     ./waybar/module.nix
+    ./vim/module.nix
   ];
 
   home.username = "adrian";
@@ -10,15 +11,6 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [ rofi prismlauncher ];
-
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    extraConfig = ''
-      imap jj <Esc>
-      set number relativenumber
-    '';
-  };
 
   programs.starship.enable = true; 
 
