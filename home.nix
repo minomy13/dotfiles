@@ -20,6 +20,7 @@
       font = {
         normal = { family = "JetBrainsMonoNF"; style = "Regular"; };
       };
+      window.padding = { x = 15; y = 8; };
     };
   };
 
