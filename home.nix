@@ -35,6 +35,13 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+    };
+  };
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
