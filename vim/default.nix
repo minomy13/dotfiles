@@ -13,6 +13,7 @@
 
     keymaps = [
       { action = "<cmd>echo \"cock\"<CR>"; key = "<leader>c"; options.desc = "Says cock!"; }
+      { action = "<Esc>"; key = "jj"; mode = [ "i" "t" ]; options.desc = "Exit insert mode"; }
     ];
 
     plugins = {

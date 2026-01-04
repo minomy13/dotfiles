@@ -9,6 +9,10 @@
   transition: background-color .5s;
 }
 
+#waybar.empty .modules-center {
+  opacity: 0;
+}
+
 .modules-left,
 .modules-center,
 .modules-right
