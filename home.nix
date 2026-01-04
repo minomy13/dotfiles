@@ -52,6 +52,7 @@
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
+      update-test = "sudo nixos-rebuild test --flake ~/dotfiles#nixos";
       vim = "nvim";
     };
     history.size = 10000;
