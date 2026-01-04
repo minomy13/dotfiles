@@ -3,7 +3,7 @@
 {
   imports = [
     ./waybar/module.nix
-    ./vim/module.nix
+    ./vim/default.nix
   ];
 
   home.username = "adrian";
