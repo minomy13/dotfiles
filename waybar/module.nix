@@ -24,6 +24,8 @@
 
       network = {
         format-ethernet = "󰌗  {ipaddr}/{cidr}";
+	format-wifi = "   {essid} ({signalStrength}%)";
+	format-disconnected = "Disconnected ⚠";
 	tooltip = false;
       };
 

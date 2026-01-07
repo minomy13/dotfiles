@@ -71,6 +71,8 @@
     packages = with pkgs; [];
   };
 
+  home-manager.backupFileExtension = "backup";
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -86,7 +88,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    firefox
     usbutils
   ];
 
