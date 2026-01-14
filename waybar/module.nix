@@ -8,7 +8,7 @@
 
       modules-left = [ "custom/nixos" "hyprland/workspaces" ];
       modules-center = [ "hyprland/window" ];
-      modules-right = [ "network" "cpu" "memory" "custom/temp" "clock" ];
+      modules-right = [ "network" "cpu" "memory" "custom/temp" "custom/water-temp" "clock" ];
 
       "custom/nixos" = {
         format = "";
@@ -41,6 +41,13 @@
         exec = ./temperature.sh;
         interval = 10;
 	format = " {text}";
+	tooltip = false;
+      };
+
+      "custom/water-temp" = {
+        exec = ./water-temperature.sh;
+	interval = 30;
+	format = "󰏈  {text}";
 	tooltip = false;
       };
 

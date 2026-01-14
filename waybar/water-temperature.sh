@@ -1,0 +1,1 @@
+curl -X GET http://127.0.0.1:27003/api/devices/8D0C50764FCCFC5B834AF221BF0B7DDC --silent | jq -r '.device | .devices | map(select(.deviceId == "01003B00210367B861000014FF")) | .[] | .temperatureString'

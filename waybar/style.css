@@ -34,7 +34,8 @@
 #clock,
 #cpu,
 #memory,
-#temperature,
+#custom-temp,
+#custom-water-temperature,
 #network
 {
   padding: 0 10px;
