@@ -67,6 +67,13 @@
       update-test = "sudo nixos-rebuild test --flake ~/dotfiles#nixos";
       vim = "nvim";
     };
+
+    profileExtra = ''
+      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec hyprland
+      fi
+    '';
+
     history.size = 10000;
   };
 
