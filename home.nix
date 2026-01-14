@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./waybar/module.nix
+    ./waybar/default.nix
     ./vim/default.nix
   ];
 

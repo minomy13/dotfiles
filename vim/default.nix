@@ -1,7 +1,7 @@
 { lib, inputs, ... }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
   ];
 
   programs.nixvim = {
@@ -21,6 +21,7 @@
     plugins = {
       bufferline.enable = true;
       noice.enable = true;
+      web-devicons.enable = true;
 
       blink-cmp = {
         enable = true;
