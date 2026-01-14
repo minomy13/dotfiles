@@ -12,7 +12,7 @@
 
   home.packages = with pkgs; [
     rofi prismlauncher kdePackages.qtsvg kdePackages.dolphin
-    firefox
+    firefox blender
   ];
 
   home.pointerCursor = {
