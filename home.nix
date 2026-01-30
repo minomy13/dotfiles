@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -11,8 +16,14 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    rofi prismlauncher kdePackages.qtsvg kdePackages.dolphin
-    firefox blender
+    rofi
+    prismlauncher
+    kdePackages.qtsvg
+    kdePackages.dolphin
+    firefox
+    blender
+    cargo
+    rustc
   ];
 
   home.pointerCursor = {
@@ -24,17 +35,23 @@
     };
   };
 
-  programs.starship.enable = true; 
+  programs.starship.enable = true;
 
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
-        normal = { family = "JetBrainsMonoNF"; style = "Regular"; };
+        normal = {
+          family = "JetBrainsMonoNF";
+          style = "Regular";
+        };
       };
       window = {
-        padding = { x = 15; y = 8; };
-	opacity = 0.8;
+        padding = {
+          x = 15;
+          y = 8;
+        };
+        opacity = 0.8;
       };
     };
   };
@@ -83,26 +100,26 @@
       background.path = "~/wallpapers/japan/landscape_with_samurai.jpg";
       input-field = {
         size = "450, 80";
-	"dots_size" = 0.08;
-	"font_color" = "rgba(255, 255, 255, 1)";
-	"outer_color" = "rgba(0, 0, 0, 0)";
-	"inner_color" = "rgba(255, 255, 255, 0.3)";
-	valign = "bottom";
-	position = "0, 180";
-	"placeholder_text" = "password";
+        "dots_size" = 0.08;
+        "font_color" = "rgba(255, 255, 255, 1)";
+        "outer_color" = "rgba(0, 0, 0, 0)";
+        "inner_color" = "rgba(255, 255, 255, 0.3)";
+        valign = "bottom";
+        position = "0, 180";
+        "placeholder_text" = "password";
       };
       label = [
         {
           text = "$TIME12";
           "font_size" = 100;
-	  valign = "top";
-	  position = "0, -330";
+          valign = "top";
+          position = "0, -330";
         }
         {
           text = "cmd[update:1000] echo -e \"$(LC_TIME=en_US.UTF-8 date +\"%A, %B %d\")\"";
-  	  "font_size" = 30;
-	  valign = "top";
-	  position = "0, -490";
+          "font_size" = 30;
+          valign = "top";
+          position = "0, -490";
         }
       ];
     };
