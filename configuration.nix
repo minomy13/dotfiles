@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./openlinkhub/default.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./openlinkhub/default.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -59,7 +59,7 @@
   virtualisation.docker.daemon.settings = {
     userland-proxy = false;
   };
-  
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -67,8 +67,11 @@
   users.users.adrian = {
     isNormalUser = true;
     description = "Adrian";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   home-manager.backupFileExtension = "backup";
@@ -77,7 +80,7 @@
     enable = true;
     xwayland.enable = true;
   };
-  
+
   programs.steam.enable = true;
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
@@ -118,6 +121,9 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
 }

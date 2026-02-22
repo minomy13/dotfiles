@@ -22,8 +22,7 @@
     kdePackages.dolphin
     firefox
     blender
-    cargo
-    rustc
+    rustup
   ];
 
   home.pointerCursor = {

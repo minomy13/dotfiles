@@ -10,6 +10,7 @@
     extraPackages = with pkgs; [
       nixfmt
       rustfmt
+      prettier
     ];
 
     colorschemes.dracula.enable = true;
@@ -205,6 +206,10 @@
           formatters_by_ft = {
             nix = [ "nixfmt" ];
             rust = [ "rustfmt" ];
+            html = [ "prettier" ];
+            css = [ "prettier" ];
+            javascript = [ "prettier" ];
+            typescript = [ "prettier" ];
           };
         };
       };
@@ -348,6 +353,10 @@
 
         servers = {
           nixd.enable = true;
+          svelte.enable = true;
+          html.enable = true;
+          tailwindcss.enable = true;
+          ts_ls.enable = true;
 
           rust_analyzer = {
             enable = true;
