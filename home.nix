@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -22,7 +20,9 @@
     kdePackages.dolphin
     firefox
     blender
-    rustup
+    element-desktop
+    quickshell
+    godot
   ];
 
   home.pointerCursor = {
@@ -55,6 +55,10 @@
     };
   };
 
+  programs.librewolf = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     settings = {
@@ -82,6 +86,7 @@
       update = "sudo nixos-rebuild switch --flake ~/dotfiles#nixos";
       update-test = "sudo nixos-rebuild test --flake ~/dotfiles#nixos";
       vim = "nvim";
+      open = "xdg-open";
     };
 
     profileExtra = ''
