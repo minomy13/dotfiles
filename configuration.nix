@@ -15,6 +15,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Video
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement = {
+      enable = false;
+      finegrained = false;
+    };
+    open = false;
+    nvidiaSettings = true;
+  };
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.wireless.userControlled.enable = true;
