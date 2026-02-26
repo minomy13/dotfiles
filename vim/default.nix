@@ -39,6 +39,14 @@
         options.desc = "Says cock!";
       }
 
+      # lsp
+      {
+        mode = [ "n" ];
+        key = "<leader>cd";
+        action = "<cmd>lua vim.diagnostic.open_float()<cr>";
+        options.desc = "Show Line Diagnostics";
+      }
+
       # buffers
       {
         mode = [ "n" ];
@@ -357,6 +365,7 @@
           html.enable = true;
           tailwindcss.enable = true;
           ts_ls.enable = true;
+          qmlls.enable = true;
 
           rust_analyzer = {
             enable = true;
