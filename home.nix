@@ -23,6 +23,7 @@
     element-desktop
     quickshell
     godot
+    obsidian
   ];
 
   home.pointerCursor = {
