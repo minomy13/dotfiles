@@ -1,12 +1,13 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  hm.home.packages = with pkgs; [
     jq
     pavucontrol
   ];
 
-  programs.waybar = {
+  hm.programs.waybar = {
     enable = true;
+
     settings.main = {
       spacing = 4;
 
@@ -76,6 +77,7 @@
         tooltip = false;
       };
     };
+
     style = builtins.readFile ./style.css;
   };
 }
