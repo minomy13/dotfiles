@@ -17,6 +17,7 @@
 
     globals = {
       mapleader = " ";
+      clipboard = "unnamedplus";
     };
 
     keymaps = [
