@@ -6,6 +6,10 @@
   };
 
   hm.home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  hm.home.file.".config/hypr/bar" = {
+    source = ./bar;
+    recursive = true;
+  };
 
   hm.services.swww.enable = true;
 }
