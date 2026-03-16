@@ -11,5 +11,6 @@
     ./librewolf.nix
     ./quickshell.nix
     ./1password.nix
+    ./dunst.nix
   ];
 }

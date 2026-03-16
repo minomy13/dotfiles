@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  hm.home.packages = with pkgs; [ hyprshot ];
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
