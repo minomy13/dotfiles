@@ -1,11 +1,40 @@
 import Quickshell
 import Quickshell.Wayland
 import Quickshell.Hyprland
+import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 
 PanelWindow {
+    id: root
+
     readonly property bool showAllWorkspaces: false
+
+    property int batteryPercentage: 0
+
+    Process {
+        id: batteryProcess
+        command: ["cat", "/sys/class/power_supply/macsmc-battery/capacity"]
+        stdout: SplitParser {
+            onRead: data => {
+                if (!data)
+                    return;
+                var percentage = parseInt(data);
+                if (percentage === 100) {
+                    percentage -= 1;
+                }
+                root.batteryPercentage = percentage;
+            }
+        }
+        Component.onCompleted: running = true
+    }
+
+    Timer {
+        interval: 5000
+        running: true
+        repeat: true
+        onTriggered: batteryProcess.running = true
+    }
 
     anchors {
         top: true
@@ -50,6 +79,17 @@ PanelWindow {
         }
 
         Text {
+            id: battery
+            property bool showPercentage: false
+            text: "󰁾\n" + root.batteryPercentage
+            horizontalAlignment: Text.AlignHCenter
+            Layout.fillWidth: true
+            Layout.margins: 6
+            color: "#ffffff"
+            font.pixelSize: 14
+        }
+
+        Text {
             id: clock
             text: Qt.formatTime(new Date(), 'HH\nmm')
             horizontalAlignment: Text.AlignHCenter
@@ -58,7 +98,6 @@ PanelWindow {
             color: "#ffffff"
             font {
                 pixelSize: 14
-                family: "JetBrainsMono Nerd Font"
             }
 
             Timer {
