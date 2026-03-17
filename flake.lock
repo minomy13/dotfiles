@@ -41,6 +41,19 @@
         "type": "github"
       }
     },
+    "m1-firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-uOAwwWEBwmcaXJWcnUpeN1IXr1gIUS3N+RBEn37HjKo=",
+        "path": "/etc/nixos/firmware",
+        "type": "path"
+      },
+      "original": {
+        "path": "/etc/nixos/firmware",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1766651565,
@@ -82,6 +95,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "m1-firmware": "m1-firmware",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim"
       }

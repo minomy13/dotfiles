@@ -13,6 +13,11 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    m1-firmware = {
+      url = "path:/etc/nixos/firmware";
+      flake = false;
+    };
   };
 
   outputs =

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -27,8 +27,8 @@
 
     system.stateVersion = "25.11"; # Did you read the comment?
 
-    hardware.asahi.peripheralFirmwareDirectory = ./firmware;
     hardware.apple.touchBar.enable = true;
+    hardware.asahi.peripheralFirmwareDirectory = inputs.m1-firmware;
 
     nix.settings.experimental-features = [
       "nix-command"
