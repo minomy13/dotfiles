@@ -3,6 +3,7 @@
   imports = [
     ./gui
     ./cli
+    ./devices
 
     ./home-manager.nix
     ./packages.nix
