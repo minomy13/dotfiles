@@ -63,6 +63,8 @@
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
 
+  gaming.minecraft.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [

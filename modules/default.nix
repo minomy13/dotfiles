@@ -8,5 +8,6 @@
     ./packages.nix
     ./unfree.nix
     ./keyring.nix
+    ./gaming.nix
   ];
 }
