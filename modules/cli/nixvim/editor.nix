@@ -19,7 +19,7 @@
     # FIX doesn't work
     todo-comments.enable = true;
 
-    programs.nixvim.plugins.neo-tree = {
+    neo-tree = {
       enable = true;
       settings = {
         sources = [
