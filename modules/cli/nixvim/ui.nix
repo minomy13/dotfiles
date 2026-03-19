@@ -63,7 +63,7 @@
       };
     };
 
-    programs.nixvim.plugins.snacks = {
+    snacks = {
       enable = true;
       settings = {
         notifier.enabled = true;
