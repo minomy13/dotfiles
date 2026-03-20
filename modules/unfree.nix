@@ -6,5 +6,7 @@
       "obsidian"
       "1password"
       "1password-cli"
+      "nvidia-x11"
+      "nvidia-settings"
     ];
 }
