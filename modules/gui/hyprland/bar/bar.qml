@@ -11,6 +11,7 @@ PanelWindow {
     readonly property bool showAllWorkspaces: false
 
     property int batteryPercentage: 0
+    property string batteryStatus: "󱉝"
 
     Process {
         id: batteryProcess
@@ -24,11 +25,62 @@ PanelWindow {
                     percentage -= 1;
                 }
                 root.batteryPercentage = percentage;
+                batteryStatusProcess.running = true;
             }
         }
         Component.onCompleted: running = true
     }
 
+    Process {
+        id: batteryStatusProcess
+        command: ["cat", "/sys/class/power_supply/macsmc-battery/status"]
+        stdout: SplitParser {
+            onRead: data => {
+                if (!data)
+                    return;
+
+                if (data === "Charging")
+                    root.batteryStatus = "󰂄";
+                else if (data === "Full")
+                    root.batteryStatus = "󰁹";
+                else if (data === "Discharging" || data === "Not Charging") {
+                    if (root.batteryPercentage >= 90) {
+                        root.batteryStatus = "󰂂";
+                        return;
+                    } else if (root.batteryPercentage >= 80) {
+                        root.batteryStatus = "󰂁";
+                        return;
+                    } else if (root.batteryPercentage >= 70) {
+                        root.batteryStatus = "󰂀";
+                        return;
+                    } else if (root.batteryPercentage >= 60) {
+                        root.batteryStatus = "󰁿";
+                        return;
+                    } else if (root.batteryPercentage >= 50) {
+                        root.batteryStatus = "󰁾";
+                        return;
+                    } else if (root.batteryPercentage >= 40) {
+                        root.batteryStatus = "󰁽";
+                        return;
+                    } else if (root.batteryPercentage >= 30) {
+                        root.batteryStatus = "󰁼";
+                        return;
+                    } else if (root.batteryPercentage >= 20) {
+                        root.batteryStatus = "󰁻";
+                        return;
+                    } else if (root.batteryPercentage >= 10) {
+                        root.batteryStatus = "󰁺";
+                        return;
+                    } else
+                        root.batteryStatus = "󰂃";
+                } else
+                    root.batteryStatus = "󰂑";
+            }
+        }
+        Component.onCompleted: running = true
+    }
+
+    // battery timer
     Timer {
         interval: 5000
         running: true
@@ -81,7 +133,7 @@ PanelWindow {
         Text {
             id: battery
             property bool showPercentage: false
-            text: "󰁾\n" + root.batteryPercentage
+            text: root.batteryStatus + "\n" + root.batteryPercentage
             horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
             Layout.margins: 6
