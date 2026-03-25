@@ -13,6 +13,7 @@
         tailwindcss.enable = true;
         ts_ls.enable = true;
         qmlls.enable = true;
+        astro.enable = true;
 
         rust_analyzer = {
           enable = true;
