@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  hm.home.packages = with pkgs; [ hyprshot ];
+  hm.home.packages = with pkgs; [
+    hyprshot
+    hyprpicker
+  ];
 
   programs.hyprland = {
     enable = true;
