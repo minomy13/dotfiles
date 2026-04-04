@@ -1,8 +1,8 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    inputs.apple-silicon-support.nixosModules.apple-silicon-support
     ./hardware-configuration.nix
-    ./apple-silicon-support
   ];
 
   environment.systemPackages = with pkgs; [

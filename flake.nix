@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    apple-silicon-support = {
+      url = "github:nix-community/nixos-apple-silicon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     m1-firmware = {
       url = "path:/etc/nixos/firmware";
       flake = false;
