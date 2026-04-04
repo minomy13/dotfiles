@@ -24,9 +24,11 @@
 
     colorschemes.dracula.enable = true;
 
-    globals = {
-      mapleader = " ";
+    globals.mapleader = " ";
+    globalOpts = {
       clipboard = "unnamedplus";
+      number = true;
+      relativenumber = true;
     };
   };
 }
