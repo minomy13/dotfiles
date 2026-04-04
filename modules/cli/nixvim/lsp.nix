@@ -15,6 +15,11 @@
         qmlls.enable = true;
         astro.enable = true;
 
+        hls = {
+          enable = true;
+          installGhc = true;
+        };
+
         rust_analyzer = {
           enable = true;
           installRustc = true;
