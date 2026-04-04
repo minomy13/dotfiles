@@ -16,5 +16,5 @@
     recursive = true;
   };
 
-  hm.services.swww.enable = true;
+  hm.services.awww.enable = true;
 }
