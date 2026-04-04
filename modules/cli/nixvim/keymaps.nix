@@ -117,6 +117,15 @@
       action = ''<C-\><C-n>'';
       options.desc = "Exit terminal mode";
     }
+    {
+      mode = [ "n" ];
+      key = "<leader>t";
+      action = "<cmd>Neotree toggle<cr>";
+      options = {
+        desc = "Toggle file tree";
+        remap = true;
+      };
+    }
   ];
 
 }
