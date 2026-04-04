@@ -6,7 +6,6 @@
 
     ./starship.nix
     ./git.nix
-    ./gh.nix
     ./ssh.nix
   ];
 }
