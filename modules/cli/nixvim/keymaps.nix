@@ -106,13 +106,16 @@
 
     # util
     {
-      mode = [
-        "i"
-        "t"
-      ];
+      mode = [ "i" ];
       key = "jj";
       action = "<Esc>";
       options.desc = "Exit insert mode";
+    }
+    {
+      mode = [ "t" ];
+      key = "jj";
+      action = ''<C-\><C-n>'';
+      options.desc = "Exit terminal mode";
     }
   ];
 
