@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./hyprlock.nix
+  ];
+
   hm.home.packages = with pkgs; [
     hyprshot
     hyprpicker

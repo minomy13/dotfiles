@@ -3,7 +3,6 @@
   imports = [
     ./hyprland
     ./rofi
-    ./hyprlock
 
     ./alacritty.nix
     ./fonts.nix
