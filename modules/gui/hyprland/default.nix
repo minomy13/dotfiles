@@ -16,6 +16,8 @@
   };
 
   hm.home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+
+  hm.programs.quickshell.enable = true;
   hm.home.file.".config/hypr/bar" = {
     source = ./bar;
     recursive = true;
