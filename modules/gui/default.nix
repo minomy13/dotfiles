@@ -3,11 +3,11 @@
   imports = [
     ./hyprland
     ./rofi
+    ./librewolf
 
     ./alacritty.nix
     ./fonts.nix
     ./cursor.nix
-    ./librewolf.nix
     ./1password.nix
     ./dunst.nix
   ];
