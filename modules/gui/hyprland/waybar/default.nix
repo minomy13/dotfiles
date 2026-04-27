@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  hm.home.packages = with pkgs; [ pavucontrol ];
+
   hm.programs.waybar = {
     enable = true;
     style = builtins.readFile ./style.css;
@@ -35,8 +37,9 @@
 
       pulseaudio = {
         format = "\n{volume}";
-        format-muted = " ";
+        format-muted = "\nXX";
         justify = "center";
+        on-click = "pavucontrol";
       };
 
       cpu = {
