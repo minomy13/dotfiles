@@ -15,5 +15,7 @@ in
 
   config = {
     environment.systemPackages = lib.optionals cfg.minecraft.enable [ pkgs.prismlauncher ];
+
+    programs.steam.enable = cfg.steam.enable;
   };
 }

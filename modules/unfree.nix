@@ -8,5 +8,7 @@
       "1password-cli"
       "nvidia-x11"
       "nvidia-settings"
+      "steam"
+      "steam-unwrapped"
     ];
 }

@@ -35,7 +35,7 @@
     ];
   };
 
-  gaming.minecraft.enable = true;
+  gaming.steam.enable = true;
 
   system.stateVersion = "25.11"; # Did you read the comment?
 }
