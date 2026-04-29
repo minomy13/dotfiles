@@ -21,6 +21,7 @@
         "memory"
         "custom/cpu-temp"
         "custom/water-temp"
+        "battery"
         "clock"
       ];
 
@@ -70,6 +71,26 @@
         exec = pkgs.writeShellScript "fetch-water-temperature" ''
           ${pkgs.curl}/bin/curl http://127.0.0.1:27003/api/devices/ --silent | ${pkgs.jq}/bin/jq -r '.devices | map(select(.Product == "iCUE LINK System Hub")) | .[] | .GetDevice | .devices | map(select(.name == "iCUE LINK XD6 ELITE LCD")) | .[] | .temperature | round'
         '';
+      };
+
+      battery = {
+        format = "{icon}\n{capacity}";
+        format-icons = {
+          default = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          charging = [ "󰂄" ];
+        };
+        justify = "center";
       };
 
       clock = {
