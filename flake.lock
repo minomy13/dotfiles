@@ -77,6 +77,19 @@
         "type": "github"
       }
     },
+    "m1-firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-pdGCMbBxpGQpg5PgmPL4VPV7/YBTsRmurEaC8ygwreg=",
+        "path": "/boot/asahi",
+        "type": "path"
+      },
+      "original": {
+        "path": "/boot/asahi",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1776877367,
@@ -119,6 +132,7 @@
       "inputs": {
         "apple-silicon-support": "apple-silicon-support",
         "home-manager": "home-manager",
+        "m1-firmware": "m1-firmware",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim"
       }

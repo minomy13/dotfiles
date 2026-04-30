@@ -18,6 +18,11 @@
       url = "github:nix-community/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    m1-firmware = {
+      url = "/boot/asahi";
+      flake = false;
+    };
   };
 
   outputs =
