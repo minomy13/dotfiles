@@ -4,8 +4,7 @@
 }
 
 #waybar {
-  background-color: #161616;
-  opacity: 0.93;
+  background-color: rgba(22, 22, 22, 0.93);
   color: #ffffff;
 }
 
