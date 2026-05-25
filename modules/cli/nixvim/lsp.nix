@@ -14,6 +14,7 @@
         ts_ls.enable = true;
         qmlls.enable = true;
         astro.enable = true;
+        zls.enable = true;
 
         hls = {
           enable = true;
