@@ -20,7 +20,7 @@
     };
 
     m1-firmware = {
-      url = "/boot/asahi";
+      url = "/etc/nixos/asahi";
       flake = false;
     };
   };
