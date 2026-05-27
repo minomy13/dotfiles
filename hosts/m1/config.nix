@@ -19,5 +19,11 @@
   hardware.apple.touchBar.enable = true;
   hardware.asahi.peripheralFirmwareDirectory = inputs.m1-firmware;
 
+  gui.hypridle = {
+    enable = true;
+    dimDisplay = true;
+    suspend = true;
+  };
+
   system.stateVersion = "25.11"; # Did you read the comment?
 }

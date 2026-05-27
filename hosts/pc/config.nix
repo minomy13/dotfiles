@@ -37,5 +37,7 @@
 
   gaming.steam.enable = true;
 
+  gui.hypridle.enable = true;
+
   system.stateVersion = "25.11"; # Did you read the comment?
 }
