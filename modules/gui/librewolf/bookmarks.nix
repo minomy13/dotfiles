@@ -29,6 +29,10 @@
               }
             ];
           }
+          {
+            name = "Apple Music";
+            url = "https://music.apple.com";
+          }
         ];
       }
     ];
