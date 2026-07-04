@@ -4,5 +4,6 @@
     vim
     obsidian
     wl-clipboard
+    blender
   ];
 }
