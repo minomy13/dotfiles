@@ -15,6 +15,8 @@
         qmlls.enable = true;
         astro.enable = true;
         zls.enable = true;
+        lua_ls.enable = true;
+        gopls.enable = true;
 
         hls = {
           enable = true;
