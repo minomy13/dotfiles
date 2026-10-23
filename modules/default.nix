@@ -10,5 +10,6 @@
     ./unfree.nix
     ./keyring.nix
     ./gaming.nix
+    ./secureboot.nix
   ];
 }
