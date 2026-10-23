@@ -5,5 +5,10 @@
     obsidian
     wl-clipboard
     blender
+
+    kubectl
+    kubernetes-helm
+    helmfile
+    kubecolor
   ];
 }
