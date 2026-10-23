@@ -18,7 +18,7 @@
     withUWSM = true;
   };
 
-  hm.home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  hm.home.file.".config/hypr/hyprland.lua".source = ./hyprland.lua;
 
   hm.services.awww.enable = true;
 }
