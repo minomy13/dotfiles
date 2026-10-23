@@ -1,7 +1,15 @@
 { ... }:
 {
   programs.nixvim.plugins = {
-    telescope.enable = true;
+    telescope = {
+      enable = true;
+      keymaps = {
+        "<leader>/" = {
+          action = "live_grep";
+          options.desc = "Search project";
+        };
+      };
+    };
 
     which-key = {
       enable = true;
