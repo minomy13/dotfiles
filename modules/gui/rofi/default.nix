@@ -3,8 +3,10 @@
   hm.programs.rofi = {
     enable = true;
     theme = "DarkBlue";
-    modes = [ "drun" ];
-    extraConfig.show-icons = true;
+    settings = {
+      show-icons = true;
+      modes = [ "drun" ];
+    };
     plugins = [ pkgs.rofi-calc ];
   };
 }
