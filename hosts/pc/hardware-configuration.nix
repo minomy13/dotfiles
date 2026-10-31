@@ -25,16 +25,17 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # ROOT
+  boot.initrd.luks.devices.main = {
+    device = "/dev/disk/by-partuuid/c818c0fa-d2e4-4cc8-8836-5a1ddb896f93";
+    allowDiscards = true;
+  };
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/71566027-b946-4922-96a0-402232710fec";
+    device = "/dev/mapper/main";
     fsType = "ext4";
   };
 
-  fileSystems."/games0" = {
-    device = "/dev/disk/by-uuid/498787c0-3793-486e-b324-5c35c1327df4";
-    fsType = "ext4";
-  };
-
+  # BOOT
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/C8A8-E1CA";
     fsType = "vfat";
@@ -44,8 +45,20 @@
     ];
   };
 
+  environment.etc.crypttab.text = ''
+    files /dev/disk/by-id/nvme-uuid.00000000-0000-0001-0024-a2206c882623 /etc/luks/games0.key luks,nofail
+  '';
+  fileSystems."/games0" = {
+    device = "/dev/mapper/games0";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
+
   swapDevices = [
-    { device = "/dev/disk/by-uuid/d6ec0498-dfe0-447b-9005-3897344953fc"; }
+    {
+      device = "/dev/disk/by-uuid/d6ec0498-dfe0-447b-9005-3897344953fc";
+      randomEncryption.enable = true;
+    }
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
