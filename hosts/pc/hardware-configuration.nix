@@ -27,7 +27,7 @@
 
   # ROOT
   boot.initrd.luks.devices.main = {
-    device = "/dev/disk/by-partuuid/c818c0fa-d2e4-4cc8-8836-5a1ddb896f93";
+    device = "/dev/disk/by-uuid/a8aa5cf3-2798-4293-b21e-cb2868245380";
     allowDiscards = true;
   };
   fileSystems."/" = {
@@ -37,7 +37,7 @@
 
   # BOOT
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/C8A8-E1CA";
+    device = "/dev/disk/by-uuid/BD49-E8DF";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -45,19 +45,20 @@
     ];
   };
 
+  # GAMES
   environment.etc.crypttab.text = ''
-    files /dev/disk/by-id/nvme-uuid.00000000-0000-0001-0024-a2206c882623 /etc/luks/games0.key luks,nofail
+    games0 /dev/disk/by-uuid/88c8daab-3b8e-40b5-9f96-1bb9d11809fc /root/games0.key
   '';
   fileSystems."/games0" = {
     device = "/dev/mapper/games0";
     fsType = "ext4";
-    options = [ "nofail" ];
   };
 
+  # SWAP
+  boot.initrd.luks.devices.swap.device = "/dev/disk/by-uuid/602470a1-1079-41e6-bd89-957b80abd600";
   swapDevices = [
     {
-      device = "/dev/disk/by-uuid/d6ec0498-dfe0-447b-9005-3897344953fc";
-      randomEncryption.enable = true;
+      device = "/dev/mapper/swap";
     }
   ];
 
