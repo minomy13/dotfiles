@@ -236,7 +236,8 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", actio
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("librewolf"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + SHIFT + space", hl.dsp.exec_cmd(calc))
+hl.bind(mainMod .. " + SHIFT + space", hl.dsp.exec_cmd("1password --quick-access"))
+hl.bind(mainMod .. " + SHIFT + c", hl.dsp.exec_cmd(calc))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + CONTROL + P", hl.dsp.exec_cmd("hyprpicker -a"))
